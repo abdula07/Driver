@@ -64,5 +64,16 @@ namespace DriverApp
                 driversViewSource.Source = context.Drivers.ToList();
             }
         }
+
+        private void Remove(object sender, RoutedEventArgs e)
+        {
+            var selectedDriver = driversDataGrid.SelectedItem as Models.Drivers;
+            context.Drivers.Remove(selectedDriver);
+            context.SaveChanges();
+            System.Windows.Data.CollectionViewSource driversViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("driversViewSource")));
+
+            driversViewSource.Source = context.Drivers.ToList();
+
+        }
     }
 }
