@@ -1,0 +1,62 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DriverApp"
+        xmlns:Models="clr-namespace:DriverApp.Models" x:Class="DriverApp.MainWindow"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="driversViewSource" d:DesignSource="{d:DesignInstance {x:Type Models:Drivers}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource driversViewSource}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="685*"/>
+            <ColumnDefinition Width="107*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Width="100" HorizontalAlignment="Right" Click="Button_Click" Margin="0 0 10 0" Grid.Column="1" Cursor="Hand" >Добавить</Button>
+        <Button Grid.Row="0" Width="100" HorizontalAlignment="Left" Click="Save" Margin="10 " Grid.Column="0" Cursor="Hand" >Сохранить</Button>
+
+        <DataGrid Grid.Row="1" x:Name="driversDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource driversViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="0,0,0,20" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" Width="*"/>
+
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="*"/>
+                <DataGridTextColumn x:Name="surnameColumn" Binding="{Binding Surname}" Header="Surname" Width="*"/>
+                <DataGridTextColumn x:Name="middlenameColumn" Binding="{Binding Middlename}" Header="Middlename" Width="*"/>
+                <DataGridTextColumn x:Name="pasportColumn" Binding="{Binding Pasport}" Header="Pasport" Width="*"/>
+                <DataGridTextColumn x:Name="adressColumn" Binding="{Binding Adress}" Header="Adress" Width="*"/>
+                <DataGridTextColumn x:Name="adressLifeColumn" Binding="{Binding AdressLife}" Header="Adress Life" Width="*"/>
+                <DataGridTextColumn x:Name="companyColumn" Binding="{Binding Company}" Header="Company" Width="*"/>
+                <DataGridTextColumn x:Name="jobnameColumn" Binding="{Binding Jobname}" Header="Jobname" Width="*"/>
+                <DataGridTextColumn x:Name="phoneColumn" Binding="{Binding Phone}" Header="Phone" Width="*"/>
+                <DataGridTextColumn x:Name="emailColumn" Binding="{Binding Email}" Header="Email" Width="*"/>
+
+                <DataGridTemplateColumn x:Name="photoColumn" Header="Photo" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding MyImagePath}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Photo" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="EditPhoto">Редактировать фото</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Description}" Header="Description" Width="*"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+    
+
+    </Grid>
+</Window>

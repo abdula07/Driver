@@ -1,0 +1,62 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:DriverApp.Windows.Drivers"
+        xmlns:Models="clr-namespace:DriverApp.Models" x:Class="DriverApp.Windows.Drivers.Create"
+        mc:Ignorable="d"
+        Title="Create" MinHeight="400" MinWidth="450" MaxHeight="400" MaxWidth="450">
+
+        <Grid>
+
+
+            <Grid x:Name="Driver" Margin="10 5 10 5">
+                <Grid.ColumnDefinitions>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+
+
+            <TextBox  x:Name="nameTextBox" materialDesign:HintAssist.Hint="Имя" HorizontalAlignment="Stretch" Grid.Row="2" MaxLength="50" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" />
+            <TextBox x:Name="surnameTextBox" materialDesign:HintAssist.Hint="Фамилия" HorizontalAlignment="Stretch"   Grid.Row="3" MaxLength="50" Text="{Binding Surname, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" TextChanged="surnameTextBox_TextChanged"/>
+            <TextBox x:Name="middlenameTextBox" materialDesign:HintAssist.Hint="Отчество" HorizontalAlignment="Stretch"  Grid.Row="4" MaxLength="50" Text="{Binding Middlename, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Top"  />
+            <TextBox x:Name="pasportTextBox" materialDesign:HintAssist.Hint="Паспортные данные" HorizontalAlignment="Stretch" Grid.Row="5" MaxLength="11" Text="{Binding Pasport, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" />
+            <TextBox x:Name="adressTextBox" materialDesign:HintAssist.Hint="Адрес"  HorizontalAlignment="Stretch" Grid.Row="6" MaxLength="50" Text="{Binding Adress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <TextBox x:Name="adressLifeTextBox" materialDesign:HintAssist.Hint="Адрес проживания"  HorizontalAlignment="Stretch" Grid.Row="7" MaxLength="50" Text="{Binding AdressLife, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" />
+            <TextBox x:Name="companyTextBox" materialDesign:HintAssist.Hint="Компания" HorizontalAlignment="Stretch" Grid.Row="8" MaxLength="50" Text="{Binding Company, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" />
+            <TextBox x:Name="jobnameTextBox" materialDesign:HintAssist.Hint="Место работы" HorizontalAlignment="Stretch" Grid.Row="9" MaxLength="50" Text="{Binding Jobname, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" />
+            <TextBox x:Name="emailTextBox" materialDesign:HintAssist.Hint="Почта" HorizontalAlignment="Stretch" Grid.Row="10" MaxLength="50" Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" />
+            <TextBox x:Name="phoneTextBox" materialDesign:HintAssist.Hint="Телефон" HorizontalAlignment="Stretch" Grid.Row="11" MaxLength="50" Text="{Binding Phone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <TextBox x:Name="Photo" materialDesign:HintAssist.Hint="Телефон" Visibility="Hidden" HorizontalAlignment="Stretch" Grid.Row="11" MaxLength="50" Text="{Binding Photo, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+
+            <Button   Click="LoadImage" Grid.Row="12" Width="150" Height="20" Margin="0 5 5 5" FontSize="10" HorizontalAlignment="Left" Cursor="Hand">Выбрать изображение</Button>
+            <TextBox x:Name="descriptionTextBox" materialDesign:HintAssist.Hint="Заменчания" HorizontalAlignment="Stretch" MaxLength="50" Grid.Row="13" Text="{Binding Description, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" />
+                <Button Margin="10" Grid.Row="14" Click="Button_Click" HorizontalAlignment="Center" Grid.ColumnSpan="2"  >Сохранить</Button>
+
+
+            </Grid>
+
+
+        </Grid>
+
+</Window>
