@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:DriverApp.Windows.Drivers"
         xmlns:Models="clr-namespace:DriverApp.Models" x:Class="DriverApp.Windows.Drivers.Create"
         mc:Ignorable="d"
-        Title="Create" MinHeight="400" MinWidth="450" MaxHeight="400" MaxWidth="450">
+        Title="Добавление" MinHeight="400" MinWidth="450" MaxHeight="400" MaxWidth="450">
 
         <Grid>
 
