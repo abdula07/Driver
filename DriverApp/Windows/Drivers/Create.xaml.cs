@@ -25,6 +25,61 @@ namespace DriverApp.Windows.Drivers
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (nameTextBox.Text.Length <= 0) {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (surnameTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (middlenameTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (pasportTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (adressTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (adressLifeTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (companyTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (jobnameTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (emailTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+           
+            if (NewDriver.Photo == null)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
+            if (descriptionTextBox.Text.Length <= 0)
+            {
+                MessageBox.Show("Не все поля заполнены");
+                return;
+            }
             context.Drivers.Add(NewDriver);
             
 
